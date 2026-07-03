@@ -1,0 +1,191 @@
+﻿--- PAGE 1 ---
+Proyecto Unidad 2 Seguridad Inform├ítica
+Desarrollo de Software para Seguridad
+Ricardo P├®rez
+riperez@utalca.cl
+Introducci├│n
+Los keyloggers son un tipo de herramienta que registran cada tecla que se pulsa en una compu-
+tadora, a menudo sin el permiso ni el conocimiento del usuario. Un keylogger puede estar basado
+en hardware o software, y se puede usar como herramienta l├¡cita de control TI. Sin embargo,
+los keyloggers tambi├®n se pueden utilizar con ´¼ünes delictivos. Por regla general, los keyloggers
+son un spyware malicioso que se usa para capturar informaci├│n con´¼üdencial, como contrase├▒as
+o informaci├│n ´¼ünanciera que posteriormente se env├¡a a terceros para su explotaci├│n con ´¼ünes
+delictivos.
+El objetivo de este proyecto es desarrollar un keylogger de acuerdo a las necesidades planteadas,
+que no sea detectado por la v├¡ctima y que permita capturar toda la informaci├│n ingresada por el
+teclado, incorporando mecanismos de cifrado, transmisi├│n segura de datos y t├®cnicas de evasi├│n.
+Ejercicio 1 (20 puntos): Desarrollo del Keylogger
+Utilizando el lenguaje de programaci├│n de su preferencia, desarrolle un keylogger que permita
+capturar toda la informaci├│n ingresada por teclado en el dispositivo de la v├¡ctima. Puede asumir
+que la v├¡ctima utiliza cualquier sistema operativo (Android, Linux, macOS o Windows). Todo el
+desarrollo debe realizarse en un entorno controlado (por ejemplo a trav├®s de m├íquinas virtuales
+propias), nunca sobre dispositivos de terceros sin autorizaci├│n expl├¡cita.
+Se recomienda no reutilizar fragmentos de c├│digo de otros compa├▒eros, ya que se utilizar├ín
+herramientas autom├íticas para veri´¼ücar la originalidad del c├│digo implementado.
+Documente detalladamente el c├│digo (prop├│sito de cada funci├│n, par├ímetros y ´¼éujo de
+ejecuci├│n).
+Analice qu├® tipo de informaci├│n no es capturada por su implementaci├│n (p.ej. campos de
+contrase├▒a en navegadores, caracteres especiales, etc.) y justi´¼üque por qu├®.
+Implemente persistencia: el keylogger debe sobrevivir a un reinicio del sistema operativo
+de la v├¡ctima. Documente el mecanismo de persistencia utilizado.
+Muestre evidencias de funcionamiento (capturas de pantalla o fragmentos de log obtenido).
+1
+
+--- PAGE 2 ---
+Ejercicio 2 (20 puntos): Cifrado y env├¡o de los datos
+Una vez capturada la informaci├│n del teclado, esta debe cifrarse utilizando un mecanismo de
+cifrado seguro y enviarse peri├│dicamente hacia el dispositivo del atacante.
+Justi´¼üque la elecci├│n del algoritmo de cifrado. Distinga expl├¡citamente entre funciones de
+hash (p.ej. MD5, SHA-256) y algoritmos de cifrado sim├®trico o asim├®trico (p.ej. AES-256-
+GCM, RSA). Explique por qu├® MD5 no es una opci├│n v├ílida de cifrado.
+Explique c├│mo se gestiona la clave de cifrado: ┬┐est├í embebida en el ejecutable o se genera
+din├ímicamente? Discuta las implicancias de seguridad de cada enfoque.
+Env├¡e los datos cifrados a su dispositivo de forma peri├│dica. El intervalo de env├¡o debe ser
+con´¼ügurable. Los datos recibidos deben almacenarse para an├ílisis posterior.
+Una vez recibida la informaci├│n, descifre y muestre todo lo que la v├¡ctima ha escrito hasta
+el momento.
+Muestre evidencias en cada etapa: captura, cifrado, transmisi├│n y descifrado.
+Ejercicio 3 (20 puntos): MITM, Evasi├│n y Mitigaci├│n
+Lleve a cabo un ataque Man-in-the-Middle (MITM) que tenga como objetivo el dispositivo de
+la v├¡ctima y demuestre que, a pesar de interceptar la informaci├│n transmitida, la comunicaci├│n
+del keylogger no puede ser descifrada por un tercero.
+Ejecutable: el malware debe entregarse como un binario o ejecutable compilado. No
+se aceptar├í un script Python sin compilar. Si desarroll├│ el keylogger en Python, debe
+convertirlo a ejecutable (p.ej. con PyInstaller o Nuitka) y documentar el proceso.
+Evasi├│n: demuestre que su ejecutable no es detectado al menos por una herramienta
+IDS/Antivirus conocida. Como evidencia complementaria, suba el ejecutable a VirusTotal,
+documente el porcentaje de detecci├│n obtenido y analice qu├® motores lo detectan y bajo
+qu├® categor├¡a (´¼ürma, heur├¡stica, comportamiento).
+Mitigaci├│n: redacte un an├ílisis de las alternativas disponibles para usuarios y especialistas
+TI para detectar y mitigar este tipo de amenaza.
+Ejercicio 4 (10 puntos): Informe T├®cnico de Amenaza
+Redacte un informe t├®cnico breve (m├íximo 3 p├íginas) describiendo su malware como si fuera
+una amenaza real documentada, siguiendo el estilo de reportes de inteligencia de amenazas (p.ej.
+FortiGuard Threat Report). El informe debe incluir:
+Nombre y descripci├│n de la amenaza.
+Vector de infecci├│n y sistema operativo objetivo.
+TTPs (T├ícticas, T├®cnicas y Procedimientos) seg├║n MITRE ATT&CK.
+Indicadores de Compromiso (IoCs): hashes, puertos, patrones de tr├í´¼üco.
+Impacto potencial y recomendaciones de mitigaci├│n.
+2
+
+--- PAGE 3 ---
+Requisitos
+El desarrollo del proyecto es individual.
+Todo el desarrollo y las pruebas deben realizarse en entornos virtualizados propios.
+Queda estrictamente prohibido ejecutar el keylogger en dispositivos de terceros o en redes
+no autorizadas.
+El proyecto debe ser defendido en la primera semana de julio (fecha a coordinar con el
+profesor).
+Deber├ín subir a alguna plataforma un video demostrativo donde tengan la c├ímara
+encendida y expliquen el procedimiento utilizado. Este video debe ser subido un d├¡a antes
+de la defensa del proyecto.
+El c├│digo fuente debe subirse a un repositorio (GitHub, GitLab u otro) con historial de
+commits que evidencie el desarrollo progresivo.
+Pauta de evaluaci├│n
+Criterio
+Descripci├│n
+Puntaje
+Ejercicio 1 - Desarrollo del Keylogger
+20 pts
+Captura de teclado
+El keylogger captura correctamente las teclas
+pulsadas en el SO objetivo.
+8
+Persistencia
+Implementa un mecanismo de persistencia
+funcional tras reinicio.
+6
+Documentaci├│n
+del
+c├│digo
+C├│digo comentado detalladamente; se explica
+el ´¼éujo y cada funci├│n.
+4
+An├ílisis de limitacio-
+nes
+Identi´¼üca qu├® informaci├│n no captura y justi-
+´¼üca la raz├│n t├®cnica.
+2
+Ejercicio 2 - Cifrado y env├¡o de datos
+20 pts
+Elecci├│n y justi´¼üca-
+ci├│n del cifrado
+Selecciona un algoritmo de cifrado apropiado
+(no hash) y lo justi´¼üca correctamente. Distin-
+gue hash de cifrado.
+6
+Gesti├│n de clave
+Explica e implementa la gesti├│n de la clave de
+cifrado con an├ílisis de implicancias de seguri-
+dad.
+4
+Env├¡o peri├│dico
+ci-
+frado
+Env├¡a datos cifrados de forma peri├│dica; el in-
+tervalo de env├¡o es con´¼ügurable.
+6
+Descifrado
+Descifra correctamente los datos recibidos y
+los muestra en claro.
+4
+Ejercicio 3 - MITM, Evasi├│n y Mitigaci├│n
+20 pts
+Ataque MITM
+Demuestra que el tr├í´¼üco interceptado no pue-
+de descifrarse sin la clave.
+6
+Contin├║a en la p├ígina siguiente. . .
+3
+
+--- PAGE 4 ---
+Criterio
+Descripci├│n
+Puntaje
+Ejecutable y evasi├│n
+Entrega binario compilado; evidencia de no
+detecci├│n en IDS/Antivirus; an├ílisis de Virus-
+Total.
+8
+Mitigaci├│n
+An├ílisis fundamentado de contramedidas para
+usuarios y especialistas TI.
+6
+Ejercicio 4 - Informe T├®cnico de Amenaza
+10 pts
+Completitud del in-
+forme
+Incluye todos los elementos solicitados: vector,
+TTPs, IoCs, impacto.
+6
+Calidad y redacci├│n
+Redacci├│n profesional, clara y coherente con
+el estilo de un reporte de threat intelligence.
+4
+Defensa en Tiempo Real (condici├│n de aprobaci├│n)
+30 pts
+Durante la defensa, el profesor podr├í solicitar modi´¼ücaciones al proyecto en
+tiempo real, sin acceso a herramientas de inteligencia arti´¼ücial. El estudiante
+deber├í implementar los cambios solicitados directamente sobre su c├│digo, expli-
+car sus decisiones de dise├▒o y demostrar comprensi├│n cabal del funcionamiento
+de su implementaci├│n. Esta instancia constituye la condici├│n de aprobaci├│n
+del proyecto: un puntaje inferior a 15/30 en esta secci├│n implica la reproba-
+ci├│n del proyecto con nota 1,0, independientemente del puntaje obtenido en los
+ejercicios anteriores.
+Los cambios solicitados pueden incluir, entre otros:
+Modi´¼ücar el algoritmo de cifrado o el modo de operaci├│n utilizado.
+Ajustar el intervalo de env├¡o o el mecanismo de almacenamiento de los
+datos.
+Explicar y modi´¼ücar el mecanismo de persistencia implementado.
+Agregar o modi´¼ücar el ´¼ültrado de teclas capturadas.
+Demostrar en vivo el ´¼éujo completo: captura ÔåÆcifrado ÔåÆtransmisi├│n ÔåÆ
+descifrado.
+Total
+100 pts
+Advertencia: El uso de inteligencia arti´¼ücial generativa durante la defensa en tiempo
+real constituye falta acad├®mica grave y resultar├í en la reprobaci├│n inmediata del proyecto.
+El profesor podr├í solicitar al estudiante que muestre el historial de comandos, commits del
+repositorio o cualquier otro elemento que permita veri´¼ücar la autor├¡a del trabajo.
+4
+
