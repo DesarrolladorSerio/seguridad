@@ -47,7 +47,7 @@ from pathlib import Path
 
 # Configuración por defecto
 DEFAULT_LISTEN_PORT  = 8888           # el keylogger apunta a este puerto
-DEFAULT_FORWARD_HOST = "127.0.0.1"   # servidor C2 real
+DEFAULT_FORWARD_HOST = "192.168.56.10"   # servidor C2 real
 DEFAULT_FORWARD_PORT = 9999           # servidor C2 real (server.py)
 INTERCEPT_LOG        = Path("./mitm_intercept.log")
 

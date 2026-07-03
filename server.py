@@ -56,7 +56,7 @@ SALT            = b"proyect0_keylogger_salt_v1"
 KEY_ITERATIONS  = 200_000
 
 DEFAULT_PORT   = 9999
-DEFAULT_HOST   = "0.0.0.0"   # escuchar en todas las interfaces
+DEFAULT_HOST   = "192.168.56.10"   # escuchar en interfaz host-only
 OUTPUT_DIR     = Path("./received_logs")
 OUTPUT_FILE    = OUTPUT_DIR / "captured_keystrokes.txt"
 

