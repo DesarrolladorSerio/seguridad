@@ -12,7 +12,6 @@ import sys
 import time
 import socket
 import struct
-import base64
 import logging
 import argparse
 import threading
@@ -25,7 +24,6 @@ try:
     from cryptography.hazmat.primitives.ciphers.aead import AESGCM
     from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
     from cryptography.hazmat.primitives import hashes
-    import requests
 except ImportError as e:
     print(f"[ERROR] Dependencia faltante: {e}")
     print("Instale: pip install pynput cryptography requests")
