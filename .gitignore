@@ -1,0 +1,21 @@
+# Documentos privados
+*.pdf
+
+# Informe LaTeX (no subir)
+informe_latex/
+
+# Builds
+build/
+dist/
+*.spec
+__pycache__/
+
+# Logs y archivos ocultos del keylogger
+*.log
+*.enc
+
+# Entornos virtuales
+venv/
+.env
+
+preguntas_defensa.md
