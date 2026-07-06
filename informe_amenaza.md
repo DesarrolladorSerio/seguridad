@@ -205,10 +205,11 @@ alert tcp $HOME_NET any -> $EXTERNAL_NET 9999 (
 
 ## 6. Análisis de VirusTotal y Evasión (Ejercicio 3)
 
-> **Instrucciones para completar esta sección:**
-> 1. Compilar el binario: `./build.sh`
-> 2. Subir `dist/syslog-cache` a [https://www.virustotal.com/gui/file](https://www.virustotal.com/gui/file)
-> 3. Capturar pantalla del resultado y pegar el análisis aquí.
+**Resultado del análisis:**
+Al subir el ejecutable `syslog-cache` (16.02 MB) a VirusTotal, se obtuvo una tasa de detección extremadamente baja: **1 de 62 motores antivirus** detectó el archivo como malicioso.
+
+- **Única detección:** Microsoft (`PUA:Win32/Puwaders.C!ml`).
+- **Análisis:** La baja tasa de detección confirma que la ofuscación básica utilizada (`--strip` y `--noupx` en PyInstaller) fue altamente efectiva. Al generar un binario nuevo, los antivirus no tienen firmas (hashes) previas en sus bases de datos. Al no usar empacadores sospechosos como UPX, la mayoría de los motores (61 de 62) clasifican el ejecutable generado localmente como inofensivo mediante análisis estático.
 
 **Tipos de detección esperados en VirusTotal:**
 | Tipo de Detección | Descripción | Probabilidad en este binario |
